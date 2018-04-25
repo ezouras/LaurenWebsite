@@ -1,0 +1,85 @@
+/* carousel styling */
+html, body{
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.0rem;
+  line-height: 1.4rem;
+
+}
+/** hack for mobile swiper **/
+.ui-loader-header{
+  display:none;
+  border-style: none;
+}
+.carousel{
+  /*padding-bottom:.5rem;*/
+}
+
+
+  .carousel-inner{
+    height:80vh;
+    background-color: #162947;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .item{
+    height:100%;
+    position:relative;
+    width: 100%;
+  }
+  .carousel-inner > .item > img{
+        width: auto;
+        max-height: 60vh;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-55%);
+
+
+
+
+    }
+
+
+.carousel-control .icon-prev, .carousel-control .icon-next,
+  .carousel-control .glyphicon-chevron-left, .carousel-control
+  .glyphicon-chevron-right, .glyphicon-circle-arrow-left {
+      display: inline-block;
+      position: absolute;
+      top: 30vh;
+      z-index: 5;
+  }
+
+  @media screen and (max-width: 715px){
+      .carousel-control{
+        display: none;
+      }
+
+  }
+
+  @media screen and (max-width: 640px){
+        .carousel{
+          padding-bottom:.5rem;
+  }
+}
+
+/** iphone 5,6,7,8 and x in landscape mode**/
+@media screen and (max-width:812px) and (orientation: landscape){
+
+  .carousel{
+    margin-top:0;
+    padding-bottom:.5rem;
+  }
+
+}
+/* ipad PRO Portrait */
+@media only screen
+  and (min-device-width: 834px)
+  and (max-device-width: 1030px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .carousel{
+      height:82vh;
+    }
+
+}

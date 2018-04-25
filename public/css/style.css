@@ -1,0 +1,398 @@
+/****    all pages   *********/
+
+html, body{
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.0rem;
+  line-height: 1.4rem;
+  background-color: #162947;
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+/* header */
+
+header{
+  margin: 0 auto;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+}
+
+a:hover{
+  text-decoration: none;
+
+}
+a{
+  font-family: 'Raleway:700', sans-serif;
+}
+
+
+
+
+/* footer */
+footer{
+  padding-top: 20px;
+}
+
+footer img{
+height: 13vh;
+}
+
+footer .blue{
+  color: rgba(75, 100, 140, 1.0);
+}
+
+footer .smallFont{
+  font-size: 0.60em;
+}
+
+footer .smallFont a{
+  color: white;
+  text-decoration: underline;
+
+}
+footer .contactInfo{
+  margin-bottom: 2rem;
+}
+
+/***** end all pages ****/
+
+/**** index page only ******/
+
+
+/* examples */
+.examples{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding: 0px 0px;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-bottom: 9px;
+  align-items: center;
+}
+
+.card-container {
+  width: 270px;
+  height: 270px;
+  background: url(images/bg.jpg) no-repeat center;
+  background-size: cover;
+  background-position: 0px 0px;
+  background-size:100%,100%;
+  position: relative;
+  margin: 13px 13px;
+}
+
+.card-container p {
+  position: absolute;
+  height: 15%;
+  width: 100%;
+  color: white;
+  /*background-color: ;*/
+  background-color: rgba(75, 100, 140, 1.0);
+  margin: auto auto;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  padding-top: 8px;
+  bottom: 0;
+  left: 0;
+}
+
+.card-container:before {
+  position: absolute;
+  background-color: rgba(75, 100, 140, 0.7);
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+
+.card-container:hover:before {
+  display: none;
+}
+
+.card-container:hover .cardP {
+  background-color: grey;
+}
+
+/** about me section **/
+
+.aboutme{
+
+  margin: 0 auto;
+  background-color:#9CA0A3;
+  align-items: center;
+  padding: 30px 30px;
+
+  text-align: left;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  align-self: center;
+
+}
+
+/* testimonials section */
+
+.testimonials{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #4B648C;
+  min-height: 500px;
+  width: 100%;
+  margin-top: 9px;
+  padding: 0 30px;
+}
+.testimonials h2{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+
+.testimonialImage{
+  background-image:url("../images/clients.jpg");
+  /*background-size:contain;*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center;
+  /*background-size:100%,100%;*/
+}
+/************END INDEX PAGE -****************/
+
+/* AboutMe, PrivatePolicy, TermsConditions - INFO PAGES*/
+
+.mainInfo{
+  background-color:#9CA0A3;
+  font-size: 1.0rem;
+  line-height: 1.6rem;
+  padding: 3.75rem 3.75rem 3.75rem 3.75rem;
+  justify-content: center;
+  align-items: center;
+  margin:0;
+  text-align: left;
+  align-self: center;
+}
+.mainInfo div{
+  padding:1rem .5rem;
+}
+.mainInfo div:first-child{
+  padding-top:0;
+}
+.mainInfo .subTitle{
+  padding-left: 0;
+  font-weight:bold;
+
+}
+.mainInfo .mainTitle{
+  line-height: 1.6rem;
+  text-align: center;
+  margin-bottom: .75rem;
+}
+.mainInfo .emphasize{
+  font-weight: bold;
+  padding-left: 0;
+
+}
+
+.plainList{
+  list-style: none;
+  padding-left: 0;
+}
+.plainList li{
+  padding-top:.75rem;
+}
+
+
+.mainInfo >p{
+  padding: 1rem .5rem;
+}
+
+
+.mainInfo >p:first-child{
+  padding-top:0;
+}
+
+#resume{
+  margin: 0 auto;
+  width: 100%;
+  line-height: 1.6em;
+  align-self: center;
+}
+
+#resume ul{
+  padding-left: 1rem;
+  /* remove padding from the left
+  on the bullets
+  */
+  margin-bottom: 1.2rem;
+}
+
+#resume p{
+  padding-left:0rem;
+  padding-bottom:0rem;
+
+}
+
+#smallPrint{
+  font-size:.6rem;
+  line-height: .6rem;
+}
+
+/** END INFO PAGES  **/
+/************ @media ******************************/
+
+
+/* use this image UNTIL the screen is 1k wide */
+/*@media screen and (max-width: 1000px){
+    .testimonialImage{
+      background-image:url("../images/clients-mobile.jpg");
+    }
+}
+*/
+@media screen and (max-width : 375px)
+{
+  .testimonialImage{
+    background-image:url("../images/Mobile_Clients_Small.jpg");
+  }
+}
+
+/* do this UNTIL the screen is 622 wide*/
+@media screen and (min-width : 375px) and (max-width:622px)
+{
+  /** all pages **/
+  footer h3{
+    font-size: 1.2rem;
+  }
+
+  /** INDEX PAGE **/
+
+  .card-container {
+    width: 400px;
+    height: 350px;
+  }
+
+  .aboutme{
+    width: 95%;
+  }
+  .testimonials{
+    /*width:270px;*/
+    width:95%;
+
+  }
+  .testimonialImage{
+    background-image:url("../images/Mobile_Clients_Small.jpg");
+  }
+
+  /*** INFO PAGES ****/
+  .mainInfo {
+    font-size: 1.0rem;
+    line-height: 1.6rem;
+    padding: 1rem 1rem  1rem  1rem;
+  }
+
+
+}
+
+@media screen and (min-width: 623px) and (max-width: 917px)
+{
+    .aboutme{
+      width:565px;
+    }
+    .testimonials{
+      width:565px;
+
+  }
+  .testimonialImage{
+    background-image:url("../images/clients-mobile.jpg");
+  }
+}
+
+@media screen and (min-width: 918px) and (max-width: 1215px)
+{
+  .aboutme{
+    width:862px;
+  }
+  .testimonials{
+    width:862px;
+
+}
+}
+/* when the width gets to 1500 pixels, do this **/
+@media screen and (min-width: 1216px){
+  .examples{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: 270px;
+    grid-auto-columns: 270px;
+    grid-row-gap: 25px;
+    margin-left:25%;
+    margin-right:25%;
+    margin-bottom: 13px;
+  }
+  .aboutme{
+    width:1160px;
+  }
+  .testimonials{
+    width:1160px;
+
+}
+}
+/** iphone 5,6,7,8 and x in landscape mode**/
+@media screen and (max-width:812px) and (orientation: landscape){
+  .header-img{
+    height:5rem;
+  }
+  header{
+    height:15vh;
+  }
+
+
+}
+
+/** iphone 5 only ***/
+@media screen and (max-width:570px) and (orientation: landscape){
+  .card-container{
+    width: 215px;
+    height: 215px;
+  }
+
+}
+/* ipad landscape */
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1300px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    header{
+      margin-bottom:0rem;
+
+    }
+
+}
+/* ipad pro landscape */
+@media only screen
+  and (min-device-width: 1300px)
+  and (max-device-width: 1400px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    header{
+      margin-bottom:-1rem;
+
+    }
+
+}
