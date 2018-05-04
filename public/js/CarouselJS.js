@@ -30,7 +30,8 @@ $(document).ready(function(){
           var liString; //for ordered list of indicators or dots at the bottom
           var imgString;
           var divStringBeg;
-          var divStringEnd="</div>";
+          var divStringEnd="</div></div>";
+          var divWhiteBox="<div class=\"whiteBox\">";
           var altIndex=index+1;
           var carouselItem;
 
@@ -38,15 +39,15 @@ $(document).ready(function(){
           if(index==0)
           {
             liString="<li class=\"item"+altIndex+" active\"></li>";
-            divStringBeg="<div class=\"item active\">"
+            divStringBeg="<div class=\"item active\">";
           }
           else{
             liString="<li class=\"item"+altIndex+"\"></li>";
-            divStringBeg="<div class=\"item\">"
+            divStringBeg="<div class=\"item\">";
           }
           imgString="<img class=\"img-responsive center-block\" src=\"images/"+imageDir+"/"+val+"\"";
           $(".carousel-indicators").append(liString);
-          $(".carousel-inner").append(divStringBeg+imgString+divStringEnd) //add image to the carousel
+          $(".carousel-inner").append(divStringBeg+divWhiteBox+imgString+divStringEnd) //add image to the carousel
           $(".item"+altIndex).click(function() { //add listener to indicators or tiny circles at bottom
             $("#myCarousel").carousel(index);
           });

@@ -266,6 +266,23 @@ footer .contactInfo{
 }
 
 /** END INFO PAGES  **/
+
+/* contact Form */
+#contact{
+  margin: 60px auto;
+  position: relative;
+
+}
+#contact h1{
+  font-size: 2rem;
+  text-align: center;
+}
+.contactMeInner{
+  width: 50%;
+  align-items: center;
+}
+
+
 /************ @media ******************************/
 
 

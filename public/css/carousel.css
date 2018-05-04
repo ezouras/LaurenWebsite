@@ -5,37 +5,58 @@ html, body{
   line-height: 1.4rem;
 
 }
+
 /** hack for mobile swiper **/
 .ui-loader-header{
   display:none;
   border-style: none;
 }
-.carousel{
-  /*padding-bottom:.5rem;*/
+
+/** hack for mobile swiper **/
+.ui-page-active{
+  outline-color: #162947;
 }
 
-
-  .carousel-inner{
+.carousel-inner{
     height:80vh;
     background-color: #162947;
-    margin-bottom: 0;
+    margin: auto 0;
     position: relative;
   }
 
-  .item{
-    height:100%;
-    position:relative;
-    width: 100%;
-  }
-  .carousel-inner > .item > img{
+.item{
+   height: 100%;
+   width: 100%;
+   position:relative;
+}
+
+.item .whiteBox{
+  width:31rem;
+  height:40rem;
+  max-height: 65vh;
+  max-width: 65vh;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding: .5rem;
+  background-color: white;
+}
+
+
+
+  .whiteBox >img{
         width: auto;
-        max-height: 60vh;
+        height:auto;
+        max-width: 100%;
+        max-height:100%;
         position: absolute;
         top: 50%;
         left:50%;
         transform: translate(-50%,-50%);
 
     }
+
 
 
 .carousel-control .icon-prev, .carousel-control .icon-next,
@@ -52,8 +73,15 @@ html, body{
       .carousel-control{
         display: none;
       }
-
   }
+
+  @media screen and (min-width: 715px){
+        .whiteBox{
+          width:31rem;
+          height:40rem;
+        }
+  }
+
 
   @media screen and (max-width: 640px){
         .carousel{
@@ -68,8 +96,9 @@ html, body{
     margin-top:0;
     padding-bottom:.5rem;
   }
-
 }
+
+
 /* ipad PRO Portrait */
 @media only screen
   and (min-device-width: 834px)
