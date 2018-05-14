@@ -1,0 +1,97 @@
+/* color palette;
+rgba(75, 100, 140, 1.0); -> light absolute
+#162947; --> dark absolute
+#9CA0A3; --> grey;
+*/
+
+
+#contact{
+  font:inherit;
+}
+
+.contactMeInner{
+  display:flex;
+  flex-direction: column;
+  margin:1rem auto;
+  background-color:#9CA0A3;
+  border-radius: 2px;
+  /* up and down 16px otherwise center */
+}
+
+.contactMeInner h1{
+  /*font-weight: bold;*/
+  /*color:rgba(75, 100, 140, 1.0);*/
+/*  color: #162947; */
+  color: white;
+  margin: 1rem;
+  font-family: inherit;
+  font-size:2rem;
+  font-weight: lighter;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  font: inherit;
+  padding: 1rem;
+}
+
+#contact label{
+  /*color:rgba(75, 100, 140,1);*/
+  color: white;
+  margin-top: 1.2rem;
+  font: inherit;
+}
+
+
+#contact input, textarea, select{
+  margin-top: 1.2rem;
+  color:rgb(45, 59, 83);
+  font-size: 1rem;
+  font-weight: bold;
+  border: 1px solid #162947;
+  font: inherit;
+  background: white;
+  padding: .2rem .5rem;
+}
+
+#contact input:invalid, select:invalid, textarea:invalid{
+  background: rgba(75, 100, 140, .5);
+}
+
+
+#contact input:focus,select:focus,textarea:focus{
+  outline: none;
+  background:white; /* change the background to  a light grey*/
+  border-color: white;
+}
+
+#contact button{
+  margin-top: 1.2rem;
+  width: 10rem;
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 1px solid #162947;
+  cursor: pointer;
+  color:rgb(45, 59, 83);
+  background: white;
+
+}
+
+#contact button[disabled]{
+  cursor: not-allowed;
+  border: #a1a1a1;
+  background: rgba(75, 100, 140, .5);;
+  color: #a1a1a1;
+
+}
+
+/* border around fields dark blue
+and light blue in background if not filled out*/
+
+/* when clicking in field, turn grey*/
+
+/*upon filling turn white  and border a slate
+grey*/

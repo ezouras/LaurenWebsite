@@ -1,0 +1,50 @@
+Render html files with Express JS:
+https://codeforgeek.com/2015/01/render-html-file-expressjs/
+
+app beinig the express obj.
+
+https://stackoverflow.com/questions/12005442/express-static-cannot-response-to-post-requests
+
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/index.html'));
+  //__dirname : It will resolve to your project folder.
+});
+
+**remove need to use path.join everytime you
+define a route ******
+
+app.use(express.static(__dirname + '/Public'));
+//Store all HTML files in view folder.
+
+then use as many app gets as you want:
+
+THIS happens by default:
+app.get('/',function(req,res){
+  res.sendFile('index.html');
+  //It will find and locate index.html from View or Scripts
+});
+When your at the root of the server:
+localhost:3000/
+Send the index file.
+
+app.get('/About',function(req,res){
+  res.sendFile('About.html');
+  //It will find and locate index.html from View or Scripts
+});
+when your at the localhost:300/about
+route, send the about. html file.
+you could send any file at the /about rout
+you want.  you could sendFile("About2.html")
+
+////
+Using GET in express to grab
+parameters form a linke. GREAT exaxmple
+here:
+https://scotch.io/tutorials/use-expressjs-to-get-url-and-post-parameters
+
+ ******
+ http://jilles.me/express-routing-the-beginners-guide/
+
+
+ ******Using Angular and NODE ******
+ http://stackabuse.com/node-js-express-examples-rendered-rest-and-static-websites/

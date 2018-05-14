@@ -50,6 +50,11 @@ footer img{
 height: 13vh;
 }
 
+footer a{
+  color: white;
+  text-decoration: none;
+}
+
 footer .blue{
   color: rgba(75, 100, 140, 1.0);
 }
@@ -267,20 +272,7 @@ footer .contactInfo{
 
 /** END INFO PAGES  **/
 
-/* contact Form */
-#contact{
-  margin: 60px auto;
-  position: relative;
 
-}
-#contact h1{
-  font-size: 2rem;
-  text-align: center;
-}
-.contactMeInner{
-  width: 50%;
-  align-items: center;
-}
 
 
 /************ @media ******************************/
