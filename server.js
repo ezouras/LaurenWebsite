@@ -2,22 +2,37 @@ const express=require('express');
 const bodyParser=require("body-parser");
 const nodemailer = require("nodemailer");
 const fs=require("fs");
+const hbs = require('hbs');
+
+
 const port = process.env.PORT || 3000;
 const app= express();
 //call express as a function.  the object is passed back.
 // create application/x-www-form-urlencoded parser
 //instead of setting up handlers, use middle ware to tell express to serve
 
+//set variables:
+var buttonPressed=false;
+
+app.set("view engine",'hbs');
+//what you need to do with express to use hbs
+hbs.registerPartials(__dirname+"/views/partials");
+
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 //what is in the "public" folder.
 app.use(express.static(__dirname +'/public'));
 
-/*app.post("/index.html",(req,res)=>{
-  console.log("in post method and the request is: ",req.body);
-  res.sendFile(__dirname + '/public/index.html');
+app.get("/contact",(req,res)=>{
+  buttonPressed=false;
+  //res.send("HI, i'm the about page");
+  res.render('contact.hbs',{
+  buttonPressed:buttonPressed,
+  emailSent:false
+  });
+  console.log(buttonPressed);
+  console.log("GET end of method for contact");
 });
-*/
 
 var ext=".jpg";
 var imageJSON=[];
@@ -28,7 +43,9 @@ var folders = fs.readdirSync(__dirname +'/public/images');
 
 
 // POST get contac me data
-app.post("/index.html",(req,res)=>{
+//app.post("/index.html",(req,res)=>{
+app.post("/contact",(req,res)=>{
+  buttonPressed=true;
   console.log("in post method and the request is: ",req.body);
   console.log("in post method");
   const output =`
@@ -75,8 +92,13 @@ app.post("/index.html",(req,res)=>{
 
     });
 
-    console.log("At the end of the function");
+
     //res.sendFile(__dirname + '/public/index.html');
+    res.render('contact.hbs',{
+    buttonPressed:buttonPressed,
+    emailSent:false
+    });
+    console.log("POST - end of method");
   });
 
 

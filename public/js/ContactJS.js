@@ -1,9 +1,10 @@
 var button = document.querySelector(".button");
 var inputCollection = document.getElementsByTagName('input');
 var message=document.getElementById("message");
-var title=document.getElementById("title");
 
-
+button.addEventListener("click",()=>{
+  console.log("in click event");
+})
 
 var breakException={
   disableButton: function(){
@@ -11,16 +12,15 @@ var breakException={
   }
 };
 
-
-
 //turn html collection into an array:
 var inputElements = Array.prototype.slice.call(inputCollection);
 inputElements.push(message);
-inputElements.push(title);
+
 
 inputElements.forEach((input,index)=>{
-  console.log("input element is: ",input);
-  //add blur event to input fields
+    input.addEventListener("keyup",(e)=>{
+      checkFormValidity();
+    });
     input.addEventListener("blur",(e)=>{
     checkFormValidity();
   });
@@ -29,10 +29,11 @@ inputElements.forEach((input,index)=>{
 
 function checkFormValidity(){
   try{
-    console.log("Checking Validity for inputs");
       inputElements.forEach((input,index)=>{
       if(!input.checkValidity())throw breakException;
       button.removeAttribute("disabled");
+      if(input.value=='')
+      button.setAttribute("disabled");
     });
   } catch(e){
     e.disableButton();
