@@ -3,6 +3,7 @@ $(document).ready(function(){
     var dir = "/images/";
     var fileextension = ".jpg";
     var folderImages;
+    var test=false;
 
     if (window.location.search.split('?').length > 1){
       imageDir = window.location.search.split('=')[1];
@@ -63,19 +64,35 @@ $(document).ready(function(){
           $("#myCarousel").carousel("next");
         });
 
-
+/*
         $("#myCarousel").swiperight(function() {
            $(this).carousel('prev');
          });
         $("#myCarousel").swipeleft(function() {
            $(this).carousel('next');
         });
+        */
 
+        $("#myCarousel").swipe(
+          {
+            swipe:function(event, direction, distance, duration, fingerCount, fingerData)
+            {
+
+              if (direction == 'left')
+                $(this).carousel('next');
+              if (direction == 'right')
+                $(this).carousel('prev');
+            },
+
+
+            //allowPageScroll:"vertical"
+        });
 
     });//end get json file function
 
 
 
+console.log("test is equal to: ",test);
 
 
 });//end of js file

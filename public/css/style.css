@@ -3,6 +3,9 @@
 grey- > #9CA0A3;
 dark blue-> #162947;
 rgb of same:rgb(22,41,71)
+lighter blue: rgba(75, 100, 140, 1.0);
+>> links hover state: #23527c;
+>> links non hover state:#337ab7;
 
 
 
@@ -28,6 +31,9 @@ header{
   margin: 0 auto;
   margin-top: .5rem;
   margin-bottom: 1rem;
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 a:hover{
@@ -36,6 +42,11 @@ a:hover{
 }
 a{
   font-family: 'Raleway:700', sans-serif;
+  max-width: 100%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  border-bottom: .25rem;
 }
 
 /* greybox used in aboutme section, and all subpages*/
@@ -52,15 +63,27 @@ a{
 /* footer */
 footer{
   padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 footer img{
 height: 13vh;
 }
 
+/*footer h3{
+  margin:auto;
+}
+*/
 footer a{
   color: white;
   text-decoration: none;
+}
+
+footer ul{
+  padding-left: 0;
 }
 
 footer .blue{
@@ -68,18 +91,29 @@ footer .blue{
 }
 
 footer .smallFont{
-  font-size: 0.60em;
+  font-size: 0.60rem;
+  margin-top: 1rem;
 }
 
 footer .smallFont a{
-  color: white;
   text-decoration: underline;
-
-}
-footer .contactInfo{
-  margin-bottom: 2rem;
 }
 
+footer li{
+  display: inline-block;
+}
+
+.footer_contactMe{
+  padding-left:.5rem;
+}
+
+.footer_contactMe a{
+color: #337ab7;
+}
+
+.footer_contactMe a:hover{
+  color:#23527c;
+}
 /***** end all pages ****/
 
 /**** index page only ******/
@@ -148,15 +182,6 @@ footer .contactInfo{
   background-color: grey;
 }
 
-/** about me section **/
-
-/*.aboutme{
-
-  font-size: 1.2em;
-  line-height: 1.4em;
-
-}
-*/
 
 /* testimonials section */
 
@@ -185,24 +210,11 @@ footer .contactInfo{
   background-size: cover;
   background-repeat: no-repeat;
   background-position:center;
-  /*background-size:100%,100%;*/
+  background-size:100%,100%;
 }
 /************END INDEX PAGE -****************/
 
-/* AboutMe, PrivatePolicy, TermsConditions - INFO PAGES*/
 
-/*mainInfo{
-  background-color:#9CA0A3;
-  font-size: 1.0rem;
-  line-height: 1.6rem;
-  padding: 3.75rem 3.75rem 3.75rem 3.75rem;
-  justify-content: center;
-  align-items: center;
-  margin:0;
-  text-align: left;
-  align-self: center;
-}
-*/
 .greyboxSection div{
   padding:1rem .5rem;
 }
@@ -233,32 +245,36 @@ footer .contactInfo{
   padding-top:.75rem;
 }
 
-
-#resume >p{
-  padding: 1rem .5rem;
-}
-
-
-#resume >p:first-child{
-  padding-top:0;
-}
-
 #resume{
   line-height: 1.6em;
 }
 
 #resume ul{
   padding-left: 1rem;
-  /* remove padding from the left
-  on the bullets
-  */
-  margin-bottom: 1.2rem;
+  margin-bottom: .75rem;
 }
 
-#resume p{
-  padding-left:0rem;
-  padding-bottom:0rem;
 
+#resume .subject{
+  padding-bottom:.5rem;
+  padding-left:0;
+  font-weight: bold;
+}
+
+
+#resume .experience-box{
+  display: flex;
+  flex-direction: column;
+  padding:0;
+  /*align-items: flex-start;*/
+
+}
+#resume .experience-box div{
+padding:0;
+}
+
+#resume .company{
+  font-weight: bold;
 }
 
 #policy-terms{
@@ -268,6 +284,10 @@ footer .contactInfo{
 
 #policy-terms div{
   padding:0;
+}
+
+#policy-terms div .subTitle{
+padding-top:.5rem;
 }
 #policy-terms li{
   padding:0
@@ -279,52 +299,6 @@ footer .contactInfo{
 }
 
 /** END INFO PAGES  **/
-
-/** MODAL and Backdrop styling for contact page */
-.backdrop{
-  z-index:150;
-  position:fixed;
-  width:100%;
-  height:100%;
-  background-color:rgba(22,41,71,0.80)
-}
-
-.modal {
-  position: fixed;
-  /*display: none;*/
-  z-index: 200;
-  top: 45%;
-  left: 30%;
-  width: 40%;
-  background: #9CA0A3;
-  padding: 1rem;
-  border: 1px solid grey;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-.modal__title {
-  text-align: center;
-  margin: 0 0 1rem 0;
-  font-size: 1rem;
-  font-weight:lighter;
-}
-
-.modal__actions {
-  text-align: center;
-  border: 1px solid grey;
-  background: rgb(45, 59, 83);
-  color: white;
-  font: inherit;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-.modal__action{
-
-  text-decoration: none;
-  color: white;
-
-}
 
 
 
@@ -342,6 +316,7 @@ footer .contactInfo{
 {
   .testimonialImage{
     background-image:url("../images/Mobile_Clients_Small.jpg");
+    background-size:contain;
   }
 }
 
@@ -370,6 +345,7 @@ footer .contactInfo{
   }
   .testimonialImage{
     background-image:url("../images/Mobile_Clients_Small.jpg");
+    background-size:contain;
   }
 
   /*** INFO PAGES ****/

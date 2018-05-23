@@ -1,8 +1,12 @@
 /* carousel styling */
+
+/* image in carousel fills up the space in the white box */
+
 html, body{
   font-family: 'Raleway', sans-serif;
   font-size: 1.0rem;
   line-height: 1.4rem;
+
 
 }
 
@@ -17,6 +21,11 @@ html, body{
   outline-color: #162947;
 }
 
+/*#carouselImages{
+  margin-top:-40px;
+}
+*/
+
 .carousel-inner{
     height:80vh;
     background-color: #162947;
@@ -26,9 +35,12 @@ html, body{
 
 .item{
    height: 100%;
-   width: 100%;
+   max-width:95%;
+   margin: auto auto;
    position:relative;
+   margin-top:-55px;
 }
+
 
 .item .whiteBox{
   width:31rem;
@@ -41,6 +53,7 @@ html, body{
   transform: translate(-50%,-50%);
   padding: .5rem;
   background-color: white;
+
 }
 
 
@@ -70,10 +83,27 @@ html, body{
   }
 
   @media screen and (max-width: 715px){
-      .carousel-control{
-        display: none;
-      }
+    body{
+      padding-left:1%;
+      padding-right:1%;
+    }
+
+   .carousel-control span{
+        opacity:0;
+    }
+
   }
+  @media screen and (max-width: 540px){
+    body{
+      padding-left:5%;
+      padding-right:5%;
+    }
+    .item .whiteBox{
+      width:90%;
+    }
+
+  }
+
 
   @media screen and (min-width: 715px){
         .whiteBox{
@@ -96,7 +126,24 @@ html, body{
     margin-top:0;
     padding-bottom:.5rem;
   }
+  .carousel-indicators{
+    bottom: 3px;
 }
+.item{
+   margin-top:-13px;
+}
+
+}
+
+@media screen and (max-height:322px)and (orientation: landscape){
+  header{
+    margin-bottom:25px;
+  }
+  .carousel-indicators{
+    bottom: 13px;
+}
+}
+
 
 
 /* ipad PRO Portrait */
