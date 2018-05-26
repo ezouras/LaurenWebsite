@@ -4,8 +4,8 @@ img{
 }
 
 button, .modal_actions{
-  font-family: 'railway', sans-serf;
-  font-size: 1rem;
+  /*font-family: 'railway', sans-serf;*/
+  font-size: 1.2rem;
   width: 10rem;
   padding: 0.5rem;
   font-weight: bold;
@@ -30,9 +30,9 @@ button, .modal_actions{
 }
 
 #contact h1{
-  font-family: 'railway', sans-serf;
-/*font-weight: 700;*/
-  font-size: 1rem;
+  /*font-family: 'railway', sans-serf;
+  font-weight: 700;*/
+  font-size: 1.2rem;
   /*line-height:22.4px;*/
 }
 
