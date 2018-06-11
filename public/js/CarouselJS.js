@@ -8,7 +8,6 @@ $(document).ready(function(){
     if (window.location.search.split('?').length > 1){
       imageDir = window.location.search.split('=')[1];
     }
-    //console.log("image directory is: "+imageDir);
 
     //remove automatic scroll of carousel
     $('.carousel').carousel({
@@ -90,9 +89,6 @@ $(document).ready(function(){
 
     });//end get json file function
 
-
-
-console.log("test is equal to: ",test);
 
 
 });//end of js file

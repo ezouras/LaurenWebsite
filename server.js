@@ -4,18 +4,21 @@ const nodemailer = require("nodemailer");
 const fs=require("fs");
 const hbs = require('hbs');
 
-
 const port = process.env.PORT || 3000;
 const app= express();
-//call express as a function.  the object is passed back.
-// create application/x-www-form-urlencoded parser
-//instead of setting up handlers, use middle ware to tell express to serve
 
-//set variables:
-var buttonPressed=false;
+//set variables for sending email:
+var emailSent,buttonPressed,waiting;
+resetContactButtons();
+
+//set variables for loading samples
+var ext=".jpg";
+var imageJSON=[];
+var dirOfImages={};
+var folders = fs.readdirSync(__dirname +'/public/images');
+
 
 app.set("view engine",'hbs');
-//what you need to do with express to use hbs
 hbs.registerPartials(__dirname+"/views/partials");
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -24,41 +27,30 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname +'/public'));
 
 app.get("/contact",(req,res)=>{
-  buttonPressed=false;
-  //res.send("HI, i'm the about page");
   res.render('contact.hbs',{
-  buttonPressed:buttonPressed,
-  emailSent:false
+    buttonPressed,
+    waiting
   });
-  console.log(buttonPressed);
-  console.log("GET end of method for contact");
 });
 
-var ext=".jpg";
-var imageJSON=[];
-var dirOfImages={};
-var folders = fs.readdirSync(__dirname +'/public/images');
-
-
-
-
-// POST get contac me data
-//app.post("/index.html",(req,res)=>{
+// POST. this gets called when hitting the button:
 app.post("/contact",(req,res)=>{
-  buttonPressed=true;
-  console.log("in post method and the request is: ",req.body);
-  console.log("in post method");
+  /* you will put the output string in the email */
   const output =`
-  <p>You have a new contact request</p>
-  <h3>Contact Details</h3>
-  <ul>
-    <li>name: ${req.body.title} ${req.body.fname} ${req.body.lname}</li>
-    <li>email: ${req.body.email}<li>
-  </ul>
-  <h3>Message</h3>
-  <p>${req.body.message}</p>
-
+  <h2>Contact details are as follows:</h2>
+  <p>
+    <h3>Name:</h3><b> ${req.body.fname} ${req.body.lname}</b>
+    <br>
+    <h3>Email:</h3><b> ${req.body.email}</b>
+    <br>
+    <h3>Message:</h3><b>${req.body.message}</b>
+  </p>
   `;
+
+  const outputText=`
+  Name: ${req.body.fname} ${req.body.lname}
+  Email: ${req.body.email}
+  Message: ${req.body.message}`;
 
   let transporter = nodemailer.createTransport({
         service: 'Gmail',
@@ -66,40 +58,39 @@ app.post("/contact",(req,res)=>{
             user: 'bossyappstest@gmail.com', // generated ethereal user
             pass: 'B0ssyAPpsT3st', // generated ethereal password
         },
-    });
+    }); /* end of transporter creation */
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: 'bossyappstest@gmail.com', // sender address
-        to: 'ezouras@hotmail.com', // list of receivers
-        subject: 'Hello Lauren ✔', // Subject line
-        text: 'You have a new message', // plain text body
-        html: 'output' // html body
-    };
+        from: 'bossyappstest@gmail.com',
+        to: 'design@laurenbriddell.com', // list of receivers
+        subject: 'New Contact Request from Lauren Briddell Website', // Subject line
+        text: outputText, // plain text body
+        html: output // html body
+    }; /* end of mailOptions creation */
 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-        //when clicking email me - set up javascript to
-        //create modeal and say "email has been sent"
-        //then go back to index page FROM Modal
-        //res.sendFile(__dirname + '/public/Contact.html');
-        res.sendFile(__dirname + '/public/index.html')
+      if(error)
+      {
+        res.render('contact.hbs',{
+            buttonPressed:true,
+            waiting:false,
+            emailSent:false
+        });
+        resetContactButtons();
+        return;
+      }
+      //if message sent correctly render page differently
+      res.render('contact.hbs',{
+      buttonPressed:true,
+      waiting:false,
+      emailSent:true
+      });
+      resetContactButtons();
 
-    });
-
-
-    //res.sendFile(__dirname + '/public/index.html');
-    res.render('contact.hbs',{
-    buttonPressed:buttonPressed,
-    emailSent:false
-    });
-    console.log("POST - end of method");
-  });
+      }); //finished sending Message
+  });/* end post message */
 
 
 
@@ -127,7 +118,11 @@ folders.forEach(function(item,index){
 fs.writeFileSync(__dirname +'/public/image-data.json',JSON.stringify(imageJSON));
 
 
-
+function resetContactButtons(){
+  emailSent=false;
+  buttonPressed=false;
+  waiting=true;
+}
 
 app.listen(port,()=>{
   console.log("Server is up");

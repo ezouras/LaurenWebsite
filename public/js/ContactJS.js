@@ -1,10 +1,12 @@
-var button = document.querySelector(".button");
+var button = document.querySelector(".submitButton");
+//var backdrop=document.querySelector(".backdrop");
 var inputCollection = document.getElementsByTagName('input');
 var message=document.getElementById("message");
+document.body.style.cursor  = 'default';
 
 button.addEventListener("click",()=>{
-  console.log("in click event");
-})
+  document.body.style.cursor  = "wait";
+});
 
 var breakException={
   disableButton: function(){

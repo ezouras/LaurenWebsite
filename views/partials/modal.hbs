@@ -1,9 +1,17 @@
-{{#if buttonPressed}}
-<div class="backdrop"></div>
-<div class="modal">
-    <h1 class="modal__title">You're message has been sent</h1>
+{{#unless waiting}}
+{{#if emailSent}}
+    <div class="modal">
+        <h1 class="modal__title">You're message has been sent</h1>
+        <button class="modal__actions">
+            <a href="index.html" class="modal__action">OK</a>
+        </button>
+    </div>
+  {{else}}
+    <div class="modal">
+    <h1 class="modal__title">Unsuccessful!</h1>
     <button class="modal__actions">
-        <a href="index.html" class="modal__action">OK</a>
+        <a href="/contact" class="modal__action">Try Sending Again!</a>
     </button>
-</div>
+  </div>
 {{/if}}
+{{/unless}}

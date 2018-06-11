@@ -4,7 +4,6 @@ img{
 }
 
 button, .modal_actions{
-  /*font-family: 'railway', sans-serf;*/
   font-size: 1.2rem;
   width: 10rem;
   padding: 0.5rem;
@@ -16,7 +15,6 @@ button, .modal_actions{
 #contact{
   font-family: inherit;
   padding-bottom: 0;
-  /*font-weight:700;*/
   color: white;
   max-width: 85%;
   margin-top: 1rem;
@@ -30,10 +28,7 @@ button, .modal_actions{
 }
 
 #contact h1{
-  /*font-family: 'railway', sans-serf;
-  font-weight: 700;*/
   font-size: 1.2rem;
-  /*line-height:22.4px;*/
 }
 
 #contact form{
@@ -99,6 +94,8 @@ form{
 .backdrop{
   z-index:150;
   position:fixed;
+  top:0;
+  left:0;
   width:100%;
   height:100%;
   background-color:rgba(22,41,71,0.80);

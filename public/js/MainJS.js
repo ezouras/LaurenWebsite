@@ -46,12 +46,10 @@ var quotes=[
 $(document).ready(function(){
   var quoteIndex = 0;
   var max=quotes.length-1;
-  console.log("max is: "+max);
 
 
   function fadeInOut(quoteObject) {
     var delay=5000;
-    console.log("quote length is: "+quoteObject.quote.length);
     if(quoteObject.quote.length>435){
       delay=30000;
     };
