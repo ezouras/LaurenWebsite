@@ -35,7 +35,7 @@ html, body{
 
 .item{
    height: 100%;
-   max-width:95%;
+   /*max-width:95%;*/
    margin: auto auto;
    position:relative;
    margin-top:-55px;
