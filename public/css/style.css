@@ -163,7 +163,7 @@ color: #337ab7;
 
 .card-container:before {
   position: absolute;
-  background-color: rgba(75, 100, 140, 0.7);
+  background-color: rgba(75, 100, 140, 0.65);
   content: "";
   top: 0;
   left: 0;
@@ -318,6 +318,9 @@ padding-top:.5rem;
     background-image:url("../images/Mobile_Clients_Small.jpg");
     background-size:contain;
   }
+  .card-container:before {
+    display:none;
+  }
 }
 
 /* do this UNTIL the screen is 622 wide*/
@@ -354,6 +357,9 @@ padding-top:.5rem;
     line-height: 1.6rem;
     padding: 1rem 1rem  1rem  1rem;
   }
+  .card-container:before {
+    display:none;
+  }
 
 
 }
@@ -370,6 +376,7 @@ padding-top:.5rem;
   .testimonialImage{
     background-image:url("../images/clients-mobile.jpg");
   }
+
 }
 
 @media screen and (min-width: 918px) and (max-width: 1215px)
@@ -403,12 +410,15 @@ padding-top:.5rem;
 }
 }
 /** iphone 5,6,7,8 and x in landscape mode**/
-@media screen and (max-width:812px) and (orientation: landscape){
+@media screen and (max-width:830px) and (orientation: landscape){
   .header-img{
     height:5rem;
   }
   header{
     height:15vh;
+  }
+  .card-container:before {
+    display:none;
   }
 
 
@@ -419,6 +429,9 @@ padding-top:.5rem;
   .card-container{
     width: 215px;
     height: 215px;
+  }
+  .card-container:before {
+    display:none;
   }
 
 }
@@ -432,6 +445,9 @@ padding-top:.5rem;
       margin-bottom:0rem;
 
     }
+    .card-container:before {
+      display:none;
+    }
 
 }
 /* ipad pro landscape */
@@ -443,6 +459,22 @@ padding-top:.5rem;
     header{
       margin-bottom:-1rem;
 
+    }
+    .card-container:before {
+      display:none;
+    }
+
+}
+
+/* ipad and ipad pro portrait */
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .card-container:before {
+      display:none;
     }
 
 }
