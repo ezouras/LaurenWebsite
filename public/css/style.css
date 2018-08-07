@@ -132,16 +132,31 @@ color: #337ab7;
   margin-bottom: 9px;
   align-items: center;
 }
+.overlay{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(75, 100, 140, 0.65);
+  z-index:2;
+}
 
 .card-container {
+    /*url(images/bg.jpg);*/
+  position:relative;
   width: 270px;
   height: 270px;
-  background: url(images/bg.jpg) no-repeat center;
-  background-size: cover;
+  margin: 13px 13px;
+  background-repeat: no-repeat;
   background-position: 0px 0px;
   background-size:100%,100%;
-  position: relative;
-  margin: 13px 13px;
+}
+.overlay{
+  width:100%;
+  height:100%;
+  background-color: rgba(75, 100, 140, 0.65);
+  z-index:2;
 }
 
 .card-container p {
@@ -161,7 +176,7 @@ color: #337ab7;
   left: 0;
 }
 
-.card-container:before {
+/*.card-container:before {
   position: absolute;
   background-color: rgba(75, 100, 140, 0.65);
   content: "";
@@ -171,12 +186,15 @@ color: #337ab7;
   height: 100%;
   display: block;
 }
+*/
 
 
 
-.card-container:hover:before {
-  display: none;
+
+.overlay:hover{
+  background-color: rgba(75, 100, 140, 0);
 }
+
 
 .card-container:hover .cardP {
   background-color: grey;
@@ -318,8 +336,9 @@ padding-top:.5rem;
     background-image:url("../images/Mobile_Clients_Small.jpg");
     background-size:contain;
   }
-  .card-container:before {
+  /*.card-container:before {
     display:none;
+    */
   }
 }
 
@@ -357,9 +376,10 @@ padding-top:.5rem;
     line-height: 1.6rem;
     padding: 1rem 1rem  1rem  1rem;
   }
-  .card-container:before {
+  /*.card-container:before {
     display:none;
   }
+  */
 
 
 }
@@ -417,9 +437,10 @@ padding-top:.5rem;
   header{
     height:15vh;
   }
-  .card-container:before {
+/*  .card-container:before {
     display:none;
   }
+  */
 
 
 }
@@ -430,9 +451,9 @@ padding-top:.5rem;
     width: 215px;
     height: 215px;
   }
-  .card-container:before {
+  /*.card-container:before {
     display:none;
-  }
+  }*/
 
 }
 /* ipad landscape */
@@ -445,9 +466,10 @@ padding-top:.5rem;
       margin-bottom:0rem;
 
     }
-    .card-container:before {
+    /*.card-container:before {
       display:none;
     }
+    */
 
 }
 /* ipad pro landscape */
@@ -460,9 +482,10 @@ padding-top:.5rem;
       margin-bottom:-1rem;
 
     }
-    .card-container:before {
+    /*.card-container:before {
       display:none;
     }
+    */
 
 }
 
@@ -473,8 +496,9 @@ padding-top:.5rem;
   and (max-device-width: 1024px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 1) {
-    .card-container:before {
+  /*  .card-container:before {
       display:none;
     }
+    */
 
 }

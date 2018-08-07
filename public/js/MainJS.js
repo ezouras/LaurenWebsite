@@ -44,6 +44,12 @@ var quotes=[
 
 
 $(document).ready(function(){
+
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+   $(".overlay").css("background-color","rgba(75, 100, 140,0)");
+  }
+
+
   var quoteIndex = 0;
   var max=quotes.length-1;
 
