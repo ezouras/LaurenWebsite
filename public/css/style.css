@@ -193,6 +193,7 @@ color: #337ab7;
 
 .overlay:hover{
   background-color: rgba(75, 100, 140, 0);
+  cursor: pointer;
 }
 
 
