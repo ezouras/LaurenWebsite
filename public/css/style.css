@@ -86,6 +86,11 @@ footer ul{
   padding-left: 0;
 }
 
+footer .phone{
+color:white;
+text-decoration: none;
+}
+
 footer .blue{
   color: rgba(75, 100, 140, 1.0);
 }
@@ -108,7 +113,7 @@ footer li{
 }
 
 .footer_contactMe a{
-color: #337ab7;
+color: rgba(75, 100, 140, 1.0);
 }
 
 .footer_contactMe a:hover{
